@@ -56,4 +56,8 @@ The **EDA section** will include:
 
 ---
 
-## 📁 Repository Structure
+## 👤 Author
+**Vedanth P Bharadwaj**  
+📧 [vedanthpbharadwaj@gmail.com]  
+💼 [LinkedIn](https://www.linkedin.com/in/vedanth-p-bharadwaj)  
+🎓 Data Science & Analytics Engineering Enthusiast  
