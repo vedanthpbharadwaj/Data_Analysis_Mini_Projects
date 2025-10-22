@@ -1,6 +1,14 @@
 select *
 from layoffs;
 
+create table layoffs_staging
+like layoffs;
+
+insert into layoffs_staging
+select *
+from layoffs;
+
+
 select *
 from layoffs_staging;
 
@@ -25,7 +33,7 @@ PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `
 country, funds_raised_millions) as row_num
 from layoffs_staging
 )
-DELETE
+delete
 FROM duplicates_cte 
 WHERE row_num > 1;
 
@@ -54,9 +62,16 @@ PARTITION BY company, location, industry, total_laid_off, percentage_laid_off, `
 country, funds_raised_millions) as row_num
 from layoffs_staging;
 
+select count(*)
+from layoffs_staging2;
+
 
 Select *
 from layoffs_staging2
+WHERE row_num > 1;
+
+DELETE
+FROM layoffs_staging2
 WHERE row_num > 1;
 
 
